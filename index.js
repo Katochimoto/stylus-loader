@@ -35,6 +35,8 @@ module.exports = function(source) {
   options.set = options.set || stylusOptions.set || {};
   options.define = options.define || stylusOptions.define || {};
 
+  var stylusRequire = stylusOptions.stylusRequire || stylus;
+
   if (options.sourceMap != null) {
     options.sourcemap = options.sourceMap;
     delete options.sourceMap;
@@ -43,7 +45,7 @@ module.exports = function(source) {
     options.sourcemap = { comment: false };
   }
 
-  var styl = stylus(source, options);
+  var styl = stylusRequire(source, options);
   var paths = [path.dirname(options.filename)];
 
   function needsArray(value) {

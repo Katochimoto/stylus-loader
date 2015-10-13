@@ -174,6 +174,14 @@ stylus: {
   preferPathResolver: 'webpack',
 }
 ```
+### Using external Stylus
+If you'd like to use not the Stylus version that goes with the plugin, but your custom one (patched or of a previous version), you could use the `stylusRequire` setting by passing your version to it:
+
+```js
+stylus: {
+  stylusRequire: require('stylus')
+}
+```
 
 ## Install
 
